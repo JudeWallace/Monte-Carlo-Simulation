@@ -7,7 +7,7 @@ import java.util.TreeMap;
 public class Main {
 
     private static TreeMap<Integer, Integer> finalPrices = new TreeMap<>();
-    private static int stockStartingPrice = 100;
+    private final static int stockStartingPrice = 100;
 
     /**
      * Performs the Monte Carlo simulation with the given constraints
@@ -21,8 +21,8 @@ public class Main {
         for(int i = 0; i < N; i++) {
             currentPrice = stockStartingPrice;
             for(int j = 0; j < S; j++){
-                int direction = random.nextBoolean() ? 1 : -1;
-                currentPrice += direction;
+                int stepRandomDirection = random.nextBoolean() ? 1 : -1;
+                currentPrice += stepRandomDirection;
             }
             finalPrices.put(currentPrice, finalPrices.getOrDefault(currentPrice, 0) + 1);
         }
@@ -40,6 +40,7 @@ public class Main {
         int input = 0;
         boolean isValid = false;
 
+        // Loop until the user enters a valid input based on the prompt
         while (!isValid) {
             System.out.print(prompt);
             if (scanner.hasNextInt()) {
@@ -62,22 +63,24 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         int S = getValidInput(scanner, "Enter the number of steps per walk (1-100): ", 1, 100);
-        int N = getValidInput(scanner, "Enter the number of walks (1-10000): ", 1, 10000);
+        int N = getValidInput(scanner, "Enter the number of walks (1-100000): ", 1, 100000);
 
-        System.out.println("\nValid inputs received:");
+        System.out.println("\nValid inputs received. Running the Monte Carlo Simulations with:");
         System.out.println("Number of steps (S): " + S);
         System.out.println("Number of walks (N): " + N);
 
         scanner.close();
 
+        // Run the simulation
         monteCarloSimulation(S, N);
 
-        System.out.printf("\n%-7s | %-7s%n", "Price (£)", "Probability");
+        // Display the simulations results in a formatted table
+        System.out.printf("\n%-10s | %-20s%n", "Price (£)", "Probability");
         System.out.println("--------------------------------------");
         finalPrices.forEach((key, value) -> {
             // Calculate the probabilities for each outputted price
             double probability = (double) value / N;
-            System.out.printf("%-7d | %-7f%n", key, probability);
+            System.out.printf("%-10d | %-20f%n", key, probability);
         });
     }
 }
