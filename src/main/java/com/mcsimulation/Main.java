@@ -1,11 +1,14 @@
 package com.mcsimulation;
 
+import lombok.Getter;
+
 import java.util.Random;
 import java.util.Scanner;
 import java.util.TreeMap;
 
 public class Main {
 
+    @Getter
     private static TreeMap<Integer, Integer> finalPrices = new TreeMap<>();
     private final static int stockStartingPrice = 100;
 
@@ -14,7 +17,7 @@ public class Main {
      * @param S Number of steps within each walk
      * @param N Number of walks of the simulation
      */
-    private static void monteCarloSimulation(Integer S, Integer N) {
+    public static void monteCarloSimulation(Integer S, Integer N) {
         int currentPrice;
         Random random = new Random();
 
