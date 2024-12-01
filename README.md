@@ -2,7 +2,7 @@
 This repoistory contains the code to run the Monte Carlo simulation, initialised with a stock priced at £100 and accepting and validating user inputs for the bounds of the Number of Steps (S) and Number of Walks (W) of the simulation. The result is a table containing the prices and there respecitive probabilites outputted by the Monte Carlo simulation.
 
 ## Requirements
-To run the application <b>Java 22</b> will need to be installed locally. This is the only manual requirement all other depencies are handled with maven.
+To run the application <b>Java 21</b> will need to be installed locally. This is the only manual requirement all other depencies are handled with maven.
 
 ## How to Use
 ### Option 1 - .jar file
