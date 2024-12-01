@@ -9,17 +9,20 @@ To run the application <b>Java 22</b> will need to be installed locally. This is
   I have emailed a copy of the .jar for easier download, alternatively I have a jar included in the repository.
   - Step 1: Navigate in a terminal to the directory the jar has been downlaoaded into
   - Step 2: Enter the following command:
-``` bash
-java -jar Monte-Carlo-Simulation.jar
-```
+    ``` bash
+    java -jar Monte-Carlo-Simulation.jar
+    ```
 
 ### Option 2 - locally compiling project and running
   - Step 1: Clone the repository onto your local machine
   - Step 2: Compile the project
-   ```bash
-./mvnw package
-```
+    ```bash
+    chmod +x ./mvnw
+    ```
+    ```bash
+    ./mvnw package
+    ```
   - Step 3: Now we have compiled the project we can run it using:
-```bash
-  java -jar target/Monte-Carlo-Simulation-1.0.jar
-  ```
+    ```bash
+     java -jar target/Monte-Carlo-Simulation-1.0.jar
+    ```
