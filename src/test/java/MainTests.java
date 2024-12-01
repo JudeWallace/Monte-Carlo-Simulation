@@ -11,6 +11,5 @@ public class MainTests {
         final int S = 100;
         Main.monteCarloSimulation(S, N);
         assertEquals(N, Main.getFinalPrices().values().stream().mapToInt(x -> x).sum());
-
     }
 }
