@@ -1,28 +1,42 @@
 # Monte Carlo Simulation
-This repoistory contains the code to run the Monte Carlo simulation, initialised with a stock priced at £100 and accepting and validating user inputs for the bounds of the Number of Steps (S) and Number of Walks (W) of the simulation. The result is a table containing the prices and there respecitive probabilites outputted by the Monte Carlo simulation.
+This repository contains a Java-based Monte Carlo simulation that models a stock price initialised at £100. The application accepts and validates user inputs for the <b>Number of Steps (S)</b> and <b>Number of Walks (W)</b> in the simulation. The result is a table displaying the probability distribution of the final share prices.
 
 ## Requirements
-To run the application <b>Java 21</b> will need to be installed locally. This is the only manual requirement all other depencies are handled with maven.
+To run this application, you need <b>Java 21</b> installed on your system.
 
+* Download Java 21 from the official Oracle site: https://www.oracle.com/java/technologies/downloads/#java21
+* For JAR file execution: The JRE (Java Runtime Environment) is sufficient.
+* For local compilation: The JDK (Java Development Kit) is required.
+  
 ## How to Use
-### Option 1 - .jar file
-  I have emailed a copy of the .jar for easier download, alternatively I have a jar included in the repository.
-  - Step 1: Navigate in a terminal to the directory the jar has been downlaoaded into
-  - Step 2: Enter the following command:
+### Option 1: Running The Precompiled JAR File
+1. Download the Monte-Carlo-Simulation-1.jar file
+   * I have emailed a copy for easier access.
+   * Alternatively, you can find the JAR file in this repository (in the ./dist directory)
+2. Open a terminal and navigate to the directory where the JAR file is saved.
+3. Run the application using the following command:
     ``` bash
-    java -jar Monte-Carlo-Simulation.jar
+    java -jar Monte-Carlo-Simulation-1.jar
     ```
 
-### Option 2 - locally compiling project and running
-  - Step 1: Clone the repository onto your local machine
-  - Step 2: Compile the project
+### Option 2: Compiling and Running the Project Locally
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/JudeWallace/Monte-Carlo-Simulation.git
+   ```
+3. Navigate to the directory of the project in a terminal.
+   ```bash
+   cd Monte-Carlo-Simulation
+   ```
+5. To compile enter the following commands:
+   ```bash
+   chmod +x ./mvnw
+   ```
     ```bash
-    chmod +x ./mvnw
-    ```
-    ```bash
-    ./mvnw package
-    ```
-  - Step 3: Now we have compiled the project we can run it using:
-    ```bash
-     java -jar target/Monte-Carlo-Simulation-1.0.jar
-    ```
+   ./mvnw package
+   ```
+6. Now we have compiled the project we can run it using:
+   ```bash
+   java -jar target/Monte-Carlo-Simulation-1.jar
+   ```
+    
