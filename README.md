@@ -5,8 +5,6 @@ This repository contains a Java-based Monte Carlo simulation that models a stock
 To run this application, you need <b>Java 21</b> installed on your system.
 
 * Download Java 21 from the official Oracle site: https://www.oracle.com/java/technologies/downloads/#java21
-* For JAR file execution: The JRE (Java Runtime Environment) is sufficient.
-* For local compilation: The JDK (Java Development Kit) is required.
   
 ## How to Use
 ### Option 1: Running The Precompiled JAR File
@@ -24,7 +22,7 @@ To run this application, you need <b>Java 21</b> installed on your system.
    ```bash
    git clone https://github.com/JudeWallace/Monte-Carlo-Simulation.git
    ```
-3. Navigate to the directory of the project in a terminal.
+3. Navigate to the project in the terminal:
    ```bash
    cd Monte-Carlo-Simulation
    ```

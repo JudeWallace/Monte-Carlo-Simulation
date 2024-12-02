@@ -1,4 +1,4 @@
-package com.mcsimulation;
+package org.mcsimulation;
 
 import lombok.Getter;
 
@@ -15,26 +15,26 @@ public class Main {
     /**
      * Performs the Monte Carlo simulation with the given constraints
      * @param S Number of steps within each walk
-     * @param N Number of walks of the simulation
+     * @param N Number of walks within the simulation
      */
     public static void monteCarloSimulation(Integer S, Integer N) {
-        int currentPrice;
+        int currentStepPrice;
         Random random = new Random();
 
         for(int i = 0; i < N; i++) {
-            currentPrice = stockStartingPrice;
+            currentStepPrice = stockStartingPrice;
             for(int j = 0; j < S; j++){
                 int stepRandomDirection = random.nextBoolean() ? 1 : -1;
-                currentPrice += stepRandomDirection;
+                currentStepPrice += stepRandomDirection;
             }
-            finalPrices.put(currentPrice, finalPrices.getOrDefault(currentPrice, 0) + 1);
+            finalPrices.put(currentStepPrice, finalPrices.getOrDefault(currentStepPrice, 0) + 1);
         }
     }
 
     /**
      * Prompt the user with input messages and validate there response
      * @param scanner Scanner object to listen to terminal inputs
-     * @param prompt Then message to ask the user
+     * @param prompt The message to ask the user
      * @param min Min bound of acceptable integer input
      * @param max Max bound of acceptable integer input
      * @return The integer inputted once a valid one has been entered
@@ -43,7 +43,7 @@ public class Main {
         int input = 0;
         boolean isValid = false;
 
-        // Loop until the user enters a valid input based on the prompt
+        // Loop until the user enters a valid input based on the prompt, and it's min/max bounds
         while (!isValid) {
             System.out.print(prompt);
             if (scanner.hasNextInt()) {
@@ -62,9 +62,15 @@ public class Main {
         return input;
     }
 
+    /**
+     * Houses the logic and entry point of the project, getting user inputs, running the simulation and then outputting
+     * the results
+     * @param args command line arguments if any are entered
+     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        // Get user to enter the values of S and N for the simulation
         int S = getValidInput(scanner, "Enter the number of steps per walk (1-100): ", 1, 100);
         int N = getValidInput(scanner, "Enter the number of walks (1-100000): ", 1, 100000);
 

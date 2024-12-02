@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.mcsimulation</groupId>
+    <groupId>org.mcsimulation</groupId>
     <artifactId>Monte-Carlo-Simulation</artifactId>
     <version>1</version>
 
@@ -37,7 +37,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.mcsimulation.Main</mainClass>
+                            <mainClass>org.mcsimulation.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
