@@ -1,5 +1,5 @@
 # Monte Carlo Simulation
-This repository contains a Java-based Monte Carlo simulation that models a stock price initialised at £100. The application accepts and validates user inputs for the <b>Number of Steps (S)</b> and <b>Number of Walks (W)</b> in the simulation. The result is a table displaying the probability distribution of the final share prices.
+This repository contains a Java-based Monte Carlo simulation that models a share price initialised at £100. The application accepts and validates user inputs for the <b>Number of Steps (S)</b> and <b>Number of Walks (W)</b> in the simulation. The result is a table displaying the probability distribution of the final share prices.
 
 ## Requirements
 To run this application, you need <b>Java 21</b> installed on your system.
@@ -27,13 +27,14 @@ To run this application, you need <b>Java 21</b> installed on your system.
    cd Monte-Carlo-Simulation
    ```
 5. To compile enter the following commands:
+   * Note: This first command may not be necessary, as mvnw should already have the correct permissions. However, if it doesn't, this command will set them appropriately.
    ```bash
    chmod +x ./mvnw
    ```
     ```bash
    ./mvnw package
    ```
-6. Now we have compiled the project we can run it using:
+7. Now we have compiled the project we can run it using:
    ```bash
    java -jar target/Monte-Carlo-Simulation-1.jar
    ```
